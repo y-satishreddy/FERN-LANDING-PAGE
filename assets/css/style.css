@@ -1,0 +1,275 @@
+/* =========================================
+   1. GLOBAL COLORS
+========================================= */
+
+:root {
+  /* Brand Colors */
+
+  --color-primary: #10322d;
+  --color-secondary: #54923f;
+  --color-accent: #517937;
+
+  /* Basic Colors */
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Text Colors */
+
+  --color-heading: #10322d;
+  --color-body: #000000;
+  --color-muted: #333333;
+  --color-light-text: #78777b;
+
+  /* Background Colors */
+
+  --color-background: #ffffff;
+  --color-background-light: #fafbf8;
+  --color-background-soft: #f2f2f2;
+
+  /* Utility Colors */
+
+  --color-danger: #ec4b3b;
+  --color-success: #22c55e;
+  --color-highlight: #cc3366;
+  --color-border: #e5e7eb;
+  --color-terracota: #7c4332;
+  /* =====================================
+       2. FONT FAMILIES
+    ===================================== */
+
+  --font-heading: "Goldenbook", serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* =====================================
+       3. FONT SIZES - PX
+    ===================================== */
+
+  /* Headings */
+
+  --h1-font-size: 30px;
+  --h2-font-size: 25px;
+  --h3-font-size: 22px;
+  --h4-font-size: 20px;
+  --h5-font-size: 18px;
+  --h6-font-size: 16px;
+
+  /* Paragraphs */
+
+  --paragraph-font-size: 16px;
+  --small-font-size: 14px;
+  --caption-font-size: 12px;
+
+  /* Interactive Elements */
+
+  --button-font-size: 16px;
+  --link-font-size: 16px;
+  --navigation-font-size: 16px;
+
+  /* =====================================
+       4. BUTTONS
+    ===================================== */
+
+  --button-font-weight: 500;
+  --button-padding: 14px 28px;
+  --button-border-radius: 999px;
+
+  /* =====================================
+       5. LINKS
+    ===================================== */
+
+  --link-font-weight: 500;
+
+  /* MAX WIDTH */
+
+  --max-width: 1440px;
+}
+
+/* =========================================
+   6. DEFAULT CSS
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--paragraph-font-size);
+  color: var(--color-body);
+  background-color: var(--color-background);
+}
+
+/* =========================================
+   7. GLOBAL TYPOGRAPHY
+   Higher specificity than Tailwind Preflight
+========================================= */
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--color-heading);
+
+  line-height: 1.2;
+}
+
+body h1 {
+  font-size: var(--h1-font-size) !important;
+}
+
+body h2 {
+  font-size: var(--h2-font-size) !important;
+}
+
+body h3 {
+  font-size: var(--h3-font-size) !important;
+}
+
+body h4 {
+  font-size: var(--h4-font-size) !important;
+}
+
+body h5 {
+  font-size: var(--h5-font-size) !important;
+}
+
+body h6 {
+  font-size: var(--h6-font-size) !important;
+}
+
+body p {
+  font-family: var(--font-body);
+  font-size: var(--paragraph-font-size);
+  color: var(--color-body);
+  line-height: 1.7;
+}
+
+/* =========================================
+   8. GLOBAL BUTTONS
+========================================= */
+
+body button,
+body .btn {
+  font-family: var(--font-body);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--button-padding);
+
+  border-radius: var(--button-border-radius);
+
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.btn-secondary {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}
+
+.btn-outline {
+  color: var(--color-primary);
+  background-color: transparent;
+
+  border: 1px solid var(--color-primary);
+}
+
+/* =========================================
+   9. GLOBAL LINKS
+========================================= */
+
+body a {
+  font-family: var(--font-body);
+  font-size: var(--link-font-size);
+  font-weight: var(--link-font-weight);
+
+  color: inherit;
+  text-decoration: none;
+}
+
+body .global-link {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   10. RESPONSIVE FONT SIZES
+========================================= */
+
+@media (max-width: 1200px) {
+  :root {
+    --h1-font-size: 30px;
+    --h2-font-size: 25px;
+    --h3-font-size: 20px;
+  }
+}
+
+/* GLOBAL MAX WIDTH */
+
+.max-w {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+.error-text-small {
+  height: 12px;
+  font-size: 12px !important;
+  margin-bottom: 4px;
+  color: crimson !important;
+  visibility: hidden;
+  padding-left: 5px;
+}
+
+.error-visible {
+  visibility: visible;
+}
+.iti--allow-dropdown {
+  width: 100%;
+}
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #10322d, #517937, #54923f);
+  border-radius: 10px;
+  border: 2px solid #f2f2f2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10322d;
+}
+
+/* FIREFOX */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #517937 #f2f2f2;
+}
